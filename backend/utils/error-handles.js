@@ -22,7 +22,7 @@ const spotExists = async (req, res, next) => {
     //   err.status = 404;
     //   err.message = "Spot couldn't be found";
     //   return next(err);
-    return res.status(400).json({
+    return res.status(404).json({
         message: "Spot couldn't be found",
         statusCode: 404
     })
@@ -80,7 +80,7 @@ const reviewExists = async (req, res, next) => {
     //   err.message = "Review couldn't be found";
     //   err.status = 404;
     //   return next(err)
-    return res.status(400).json({
+    return res.status(404).json({
         message: "Review couldn't be found",
         statusCode: 404
     })
@@ -99,7 +99,7 @@ const bookingExists = async (req, res, next) => {
     //   err.status = 404;
     //   err.message = "Booking couldn't be found";
     //   return next(err)
-    return res.status(400).json({
+    return res.status(404).json({
         message: "Booking couldn't be found",
         statusCode: 404
     })
