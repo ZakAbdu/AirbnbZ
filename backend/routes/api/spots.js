@@ -557,7 +557,12 @@ router.post('/:spotId/bookings', requireAuth, spotExists, validateBooking, async
   const bookings = await spot.getBookings();
   const bookingConflict = checkBookingConflict(startDate, endDate, bookings);
   if (bookingConflict) {
-      return next(bookingConflict);
+    //    return next(bookingConflict);
+    return res.status(403).json({
+        message: "Sorry, this spot is already booked for the specified dates",
+        statusCode: 403,
+        errors: {startDate: "Start date conflicts with an existing booking", endDate: 'End date conflicts with an existing booking'}
+    })
   }
 
   // Create new booking

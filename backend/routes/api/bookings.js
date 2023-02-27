@@ -119,13 +119,13 @@ router.put('/:bookingId', requireAuth, bookingExists, validateBooking, async (re
               return res.status(403).json({
                   message: "Sorry, this spot is already booked for the specified dates",
                   statusCode: 403,
-                  errors: { startDate: "Start date conflicts with an existing booking" }
+                  errors: { startDate: "Start date conflicts with an existing booking", endDate: "End date conflicts with an existing booking" }
               });
           } else if (bookStart <= endDate && endDate <= bookEnd) {
               return res.status(403).json({
                   message: "Sorry, this spot is already booked for the specified dates",
                   statusCode: 403,
-                  errors:  { endDate: "End date conflicts with an existing booking" }      
+                  errors:  { startDate: "Start date conflicts with an existing booking", endDate: "End date conflicts with an existing booking" }      
               });
           } else if (bookStart >= startDate && bookEnd <= endDate) {
               return res.status(403).json({
@@ -169,9 +169,9 @@ router.delete('/:bookingId', restoreUser, requireAuth, async (req, res, next) =>
   }
 
   if(findBooking.dataValues.userId !== user.id){
-      return res.status(400).json({
-          message: "Validation error",
-          statusCode: 400
+      return res.status(403).json({
+          message: "Forbidden",
+          statusCode: 403
       })
   }
 
