@@ -574,6 +574,7 @@ const checkBookingConflict = (startDate, endDate, bookings) => {
   for (let i = 0; i < bookings.length; i++) {
       const bookedStartDate = convertDate(bookings[i].startDate);
       const bookedEndDate = convertDate(bookings[i].endDate);
+      
 
       if ((bookedStartDate <= startDate && bookedEndDate >= startDate) ||
           (bookedStartDate <= endDate && endDate <= bookedEndDate) ||
