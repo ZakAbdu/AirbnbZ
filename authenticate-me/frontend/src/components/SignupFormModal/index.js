@@ -1,6 +1,7 @@
 // frontend/src/components/SignupFormModal/index.js
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useEffect } from "react";
 import { useModal } from "../../context/Modal";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css'
@@ -14,7 +15,16 @@ function SignupFormModal() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState([]);
+  const [emptyField, setEmptyField] = useState('true')
   const { closeModal } = useModal();
+
+  useEffect(() => {
+    if (username.length === 0 || username.length < 4 ||
+        firstName.length === 0 || lastName.length === 0 || email.length === 0 ||
+        password.length === 0 || password.length < 6 || password !== confirmPassword) {
+          setEmptyField(true);
+        } else setEmptyField(false);
+  }, [email, firstName, lastName, username, password, confirmPassword]) 
 
   const handleSubmit = (e) => {
     e.preventDefault();
