@@ -35,7 +35,7 @@ export const allSpots = (spots) => {
 export const addSpot = (spot) => {
     return {
         type: ADD_SPOT,
-        spots
+        spot
     }
 }
 
