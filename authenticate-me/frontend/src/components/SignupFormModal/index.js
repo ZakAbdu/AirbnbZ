@@ -41,69 +41,86 @@ function SignupFormModal() {
   };
 
   return (
-   <>
-    <h1>Sign Up</h1>
-    <form onSubmit={handleSubmit}>
-      <ul>
-        {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+    <>
+    <div className="login-form">
+      <h1>Sign Up</h1>
+      <ul className="errors-messages">
+          { errors && errors.map((error, idx) => ( <li key={idx}>{error}</li> ))}
       </ul>
-      <label>
-        Email
-        <input
-          type='text'
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Username
-        <input
-          type='text'
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-         />
-      </label>
-      <label>
-        First Name
-        <input
-          type='text'
-          value={firstName}
-          onChange={(e) => setFirstName(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Last Name
-        <input
-          type='text'
-          value={lastName}
-          onChange={(e) => setLastName(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Password
-        <input
-          type='password'
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Confirm Password
-        <input
-          type='password'
-          value={confirmPassword}
-          onChange={(e) => setConfirmPassword(e.target.value)}
-          required
-        />
-      </label>
-      <button type="submit">Sign Up</button>
-    </form>
-   </>
+      <form onSubmit={handleSubmit} className='form'>
+      <div className="input-fields">
+        <label>
+          Email
+        </label>
+          <input
+            type="text"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+          />
+      </div>
+      <div className="input-fields">
+        <label>
+          Username
+        </label>
+          <input
+            type="text"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+        </div>
+      <div className="input-fields">
+        <label>
+          First Name
+        </label>
+          <input
+            type="text"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required
+          />
+        </div>
+      <div className="input-fields">
+        <label>
+          Last Name
+        </label>
+          <input
+            type="text"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            required
+          />
+        </div>
+      <div className="input-fields">
+        <label>
+          Password
+          </label>
+          <input
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+      </div>
+      <div className="input-fields">
+        <label>
+          Confirm Password
+          </label>
+          <input
+            type="password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+            required
+          />
+      </div>
+        <button type="submit"
+                className={emptyField ? "signup-disabled" : 'signup-button'}
+                disabled={Boolean(emptyField)}
+                id='sign-button'>Sign Up</button>
+      </form>
+      </div>
+    </>
   );
 }
 
