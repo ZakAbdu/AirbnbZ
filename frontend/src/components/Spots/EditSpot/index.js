@@ -24,7 +24,7 @@ export default function  EditSpotForm() {
     const [name, setName] = useState(spot.name);
     const [description, setDescription] = useState(spot.description);
     const [price, setPrice] = useState(spot.price);
-    const [preImgUrl, setPreImgUrl] = useState(spot.SpotImages[0].url);
+    const [preImgUrl, setPreImgURL] = useState(spot.SpotImages[0].url);
     const [secondImgUrl, setSecondImgUrl] = useState('');
     const [thridImgUrl, setThridImgUrl] = useState('');
     const [fourthImgUrl, setFourthImgUrl] = useState('');

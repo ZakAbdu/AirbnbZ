@@ -4,9 +4,15 @@ import { useDispatch } from "react-redux";
 import { Route, Switch } from "react-router-dom";
 import * as sessionActions from "./store/session";
 import Navigation from "./components/Navigation";
+
 import AllSpots from "./components/Spots/AllSpots";
-import CreateSpotForm from "./components/Spots/CreateSpot";
+import Spot from "./components/Spots/Spot";
 import UserSpots from "./components/Spots/UserSpots";
+import CreateSpotForm from "./components/Spots/CreateSpot";
+import EditSpotForm from "./components/Spots/EditSpot";
+
+import "./index.css";
+
 
 function App() {
   const dispatch = useDispatch();
@@ -28,6 +34,12 @@ function App() {
           </Route>
           <Route exact path='/my-spots'>
             <UserSpots />
+          </Route>
+          <Route exact path='/spots/:spotId/edit'>
+            <EditSpotForm />
+          </Route>
+          <Route exact path='/spots/:spotId'>
+            <Spot />
           </Route>
         </Switch>
       )}
