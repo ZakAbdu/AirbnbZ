@@ -1,0 +1,121 @@
+.user-icon-div {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-icon {
+    background-color: white;
+    color: gray;
+    cursor: pointer;
+    font-size: 30px;
+    margin-bottom: 0;
+    border-radius: 20px;
+    border: 2px solid #dddddd;
+}
+
+.user-bars-div {
+    display: flex;
+    padding: 5px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.profile-dropdown {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    border-radius: 8px;
+    margin: 8px;
+    top: 33px;
+    right: 0px;
+    list-style: none;
+    position: absolute;
+    background-color: white;
+
+    min-width: 120px;
+    width: fit-content;
+    height: fit-content;
+}
+
+.profile-button-container:hover {
+    background-color: white;
+    border-radius: 21px;
+    transition-duration: 0.3s; 
+    transition-property: box-shadow;
+    box-shadow: -2p 3px 1px rgba(165, 165, 165, 0.2);
+}
+
+.user-actions {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: inherit;
+    width: 100%;
+    font-size: 14px;
+    transition-property: all;
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+}
+
+.dropdown-menu {
+    width: 100%;
+    height: inherit;
+}
+
+.login-signup {
+    text-align: left;
+    height: inherit;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+    transition-property: all;
+    font-weight: bold;
+    font-family: 'Roboto', 'Helvetica Neue', sans-serif;
+    border-bottom: 2px solid rgba(165, 165, 165, 0.2);
+}
+
+#solid-bars {
+    margin-right: 7px;
+    color: gray;
+    font-size: 15px;
+}
+
+#login-modal {
+    font-family: inherit;
+    padding: 10px;
+    transition-property: all;
+    border-bottom: 2px solid rgba(165, 165, 165, 0.2);
+}
+
+#login-modal:hover {
+    background-color: rgba(165, 165, 165, 0.2);
+}
+
+#signup-modal {
+    font-family: inherit;
+    padding: 10px;
+    transition-property: all;
+}
+
+#signup-modal:hover {
+    background-color: rgba(165, 165, 165, 0.2);
+}
+
+#user-email {
+    padding-bottom: 15px;
+    border-bottom: 2px solid rgba(165, 165, 165, 0.2);
+}
+
+#logout-button {
+    margin-top: 5px;
+    height: 25px;
+}
+
+#spots-button {
+    margin-top: 0;
+    height: 25px;
+}
