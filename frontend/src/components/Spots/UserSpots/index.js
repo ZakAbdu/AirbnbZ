@@ -104,8 +104,7 @@ export default function UserSpots() {
                             </div>
                             <div className="spot-footer">
                                 <div className="footer-left-Secion">
-                                <p className="price">${spot.price}</p>
-                                <p className="price-perNight">night</p>
+                                <p className="price">${spot.price} per night (USD)</p>
                                 <div className="edit-option">
                                     <Link exact="true" to={`/spots/${spot.id}/edit`} spot={spot} className="update" >
                                         Update

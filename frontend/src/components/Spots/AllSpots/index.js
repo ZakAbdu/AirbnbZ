@@ -78,8 +78,7 @@ export default function AllSpots() {
 
 
                             <div className="spot-footer-container">
-                                <p className="spot-price">${spot.price}</p>
-                                <p className="per-night">night</p>
+                                <p className="spot-price">${spot.price} per night (USD)</p>
                             </div>
 
                         </div>

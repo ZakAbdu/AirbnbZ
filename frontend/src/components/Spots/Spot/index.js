@@ -123,7 +123,7 @@ export default function Spot() {
             <div className="reserve-card">
                 <div className="reserve-top">
                 <div className="reserve-top-left">
-                    <p className="Spot-price">${spot.price} night</p>
+                    <p className="Spot-price">${spot.price} per night (USD)</p>
                 </div>
                 <div className="reserve-top-right">
                         {typeof spot.avgStarRating === "number" ? (
