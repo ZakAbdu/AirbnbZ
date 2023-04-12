@@ -1,10 +1,12 @@
 // frontend/src/components/reviews/deleteReview/index.js
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { useModal } from "../../../context/Modal";
 import { deleteReviews } from "../../../store/reviews";
 import { getSingleSpot } from "../../../store/spots";
-import "./DeleteReview.css";
+
+import "./DeleteReview.css"
 
 export default function DeleteReviewForm(review) {
     const dispatch = useDispatch();
@@ -15,6 +17,7 @@ export default function DeleteReviewForm(review) {
     const [errors, setErrors] = useState([]);
 
     const submitDelete = async (e) => {
+
         e.preventDefault()
 
         const deleteReview = await dispatch(deleteReviews(review.id))
@@ -22,13 +25,14 @@ export default function DeleteReviewForm(review) {
                 const data = await res.json();
                 if (data && data.errors) setErrors(data.errors);
             })
-        
+
         dispatch(getSingleSpot(review.spotId))
 
         closeModal();
     }
 
     const keepReview = () => {
+
         closeModal();
     }
 
@@ -41,8 +45,8 @@ export default function DeleteReviewForm(review) {
                 ))}
             </ul>
             <form className="form">
-                <button type="submit" className="delete-submit-button" onClick={submitDelete}>Yes, Delete This Review!</button>
-                <button type="submit" className="keep-submit-button" onClick={keepReview}>No, Keep My Review!</button>
+                <button type="submit" className="delete-submit-button" onClick={submitDelete}>Yes Delete This Review!</button>
+                <button type="submit" className="keep-submit-button" onClick={keepReview}>No Keep My Review!</button>
             </form>
         </div>
     )

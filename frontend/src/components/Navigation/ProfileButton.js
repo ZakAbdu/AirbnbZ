@@ -64,7 +64,7 @@ function ProfileButton({ user }) {
                 <div className="user-actions"> 
                     <p>Hello, {user.username}</p>
                     <p id="user-email">{user.email}</p>
-                    <button onClick={mySpots} className='airbnbz-button' id="spots-button">Manage My Spots</button>
+                    <button onClick={mySpots} className='airbnbz-button' id="spots-button">Manage Spots</button>
                     <button onClick={logout}  className='airbnbz-button' id="logout-button">Log Out</button>
                 </div>
             ) : (

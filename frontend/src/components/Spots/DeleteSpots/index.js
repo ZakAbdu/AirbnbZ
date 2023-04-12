@@ -4,7 +4,8 @@ import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { deleteSpots } from "../../../store/spots";
 import { useModal } from "../../../context/Modal";
-import "./DeleteSpots.css";
+
+import "./DeleteSpots.css"
 
 export default function DeleteSpotForm(spot) {
     const dispatch = useDispatch();
@@ -15,6 +16,13 @@ export default function DeleteSpotForm(spot) {
 
     const [errors, setErrors] = useState([]);
 
+
+    const goBack = (e) => {
+        e.preventDefault();
+
+        closeModal();
+    }
+
     const submitDelete = async (e) => {
         e.preventDefault()
 
@@ -24,25 +32,29 @@ export default function DeleteSpotForm(spot) {
                 if (data && data.errors) setErrors(data.errors);
             })
         closeModal();
-        history.push('/')
+        history.push("/")
     }
 
     const keepSpot = () => {
+
         closeModal();
     }
 
     return (
         <div className="delete-form">
-            <h1 className="form-header">Are you sure you want to delete this spot?</h1>
+            <h1 className="form-header">Are you sure you want to delete your spot?</h1>
             <ul className="error-messages">
                 {errors.map((error, idx) => (
                     <li key={idx}>{error}</li>
                 ))}
             </ul>
-            <form className="form">
-                <button type="submit" className="delete-button" id="deleteSpot-button" onClick={submitDelete}>Yes, Delete Spot!</button>
-                <button type="submit" className="keep-submit-button" onClick={keepSpot}>No, Keep Spot!</button>
+            <form
+                className="form"
+            >
+                <button type="submit" className="delete-button" id="deleteSpot-button" onClick={submitDelete}>Yes Delete My Spot!</button>
+                <button type="submit" className="keep-submit-button" onClick={keepSpot}>No Keep My Spot!</button>
             </form>
         </div>
     )
+
 }

@@ -4,17 +4,22 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import { getSingleSpot } from "../../../store/spots";
 import { getSpotReviews } from "../../../store/reviews";
+
 import CreateReviewModal from "../../Reviews/CreateReviewModal";
 import DeleteReviewForm from "../../Reviews/DeleteReview";
+
 import OpenModalMenuItem from "../../Navigation/OpenModalMenuItem";
-import "./Spot.css";
+
+
+
+import "./Spot.css"
 
 function reserveClick() {
-    alert('Feature Coming Soon')
-}
+    alert('Feature Coming Soon');
+};
 
 export default function Spot() {
-    const { spotId } = useParams();
+    const { spotId } = useParams()
     const dispatch = useDispatch();
 
     const spot = useSelector(state => state.spots.singleSpot)
@@ -31,12 +36,14 @@ export default function Spot() {
         dispatch(getSpotReviews(spotId))
     }, [dispatch, user, spot.numReviews, owner, spotId])
 
-    if (spot === {}) return null;
-    if (Object.values(spot).length === 0) return null;
+
+    if (spot === {}) return null
+    if (Object.values(spot).length === 0) return null
 
     if (spot === undefined) return null;
     if (user === undefined) return null;
     if (reviews === undefined) return null;
+
 
     const images = [
         "https://a0.muscache.com/im/pictures/01773f80-f5f8-487c-9a12-b28d91eb1336.jpg?im_w=720",
@@ -46,8 +53,9 @@ export default function Spot() {
         "https://a0.muscache.com/im/pictures/a9a5e884-0ce4-442d-9348-a5bd130e8811.jpg?im_w=720",
     ];
 
+
     if (spot) {
-        if (spot.SpotImages !== 'No images listed') {
+        if (spot.SpotImages !== "No images listed") {
             for (let i = 0; i < spot.SpotImages.length; i++) {
                 images[i] = spot.SpotImages[i].url;
             }
@@ -89,6 +97,7 @@ export default function Spot() {
         }
     }
 
+
     return spot && (
         <div className="spot-div">
             <h1 className="spot-name">{spot.name}</h1>
@@ -106,99 +115,107 @@ export default function Spot() {
                     <img className="side-picture" id="pic-4" src={images[4]} />
                 </div>
             </div>
-            <div className="spot-detail-section">
-                <div className="spot-detail">
-                    <h2 className="owner-detail"> Hosted by {spot.Owner.firstName} {spot.Owner.lastName}</h2>
-                    <p className="spot-description">{spot.description}</p>
-                </div>
-                <div className="reserve-card">
-                    <div className="reserve-top">
-                        <div className="reserve-top-left">
-                            <p className="Spot-price">${spot.price} per night</p>
-                        </div>
-                        <div className="reserve-top-right">
-                            {typeof spot.avgStarRating === 'number' ? (
-                                <h2 className="header-left"><i className="fa-solid fa-star" id="star-detail"></i>  {rating(spot.avgStarRating).toFixed(1)}</h2>
-                            ) : (
-                                <h2 className="header-left"><i className="fa-solid fa-star" id="star-detail"></i>   New</h2>
-                            )}
-                            {spot.numReviews > 0 && (
-                                spot.numReviews === 1 ? (
-                                    <h2 className="spot-reviews-number">• {spot.numReviews} review</h2>
-                                ) : (
-                                    <h2 className="spot-reviews-number">• {spot.numReviews} reviews</h2>
-                                ))}
-                        </div>
-                    </div>
-                        <div className="reserve-bottom">
-                            <button type="submit" className="login-button" id="log-button" onClick={reserveClick}>Reserve</button>
-                        </div>
-                </div>
+          <div className="spot-detail-section">
+            <div className="spot-detail">
+                <h2 className="owner-detail"> Hosted by {spot.Owner.firstName} {spot.Owner.lastName}</h2>
+                <p className="spot-description">{spot.description}</p>
             </div>
-            <div className="spot-reviews-header">
-                <div className="spot-reviews-header-left">
-                    {typeof spot.avgStarRating === 'number' ? (
-                          <h2 className="header-left"><i className="fa-solid fa-star" id="star-detail"></i>   {rating(spot.avgStarRating).toFixed(1)}</h2>
-                    ) : (
-                          <h2 className="header-left"><i className="fa-solid fa-star" id="star-detail"></i>   New</h2>
-                    )}
-                    {spot.numReviews > 0 && (
-                        spot.numReviews === 1 ? (
+            <div className="reserve-card">
+                <div className="reserve-top">
+                <div className="reserve-top-left">
+                    <p className="Spot-price">${spot.price} night</p>
+                </div>
+                <div className="reserve-top-right">
+                        {typeof spot.avgStarRating === "number" ? (
+                            <h2 className="header-left"><i className="fa-solid fa-star" id="star-detail"></i>   {rating(spot.avgStarRating).toFixed(1)}</h2>
+                        ) : (
+                            <h2 className="header-left"><i className="fa-solid fa-star" id="star-detail"></i>   New</h2>
+                        )}
+                        {spot.numReviews > 0 && (
+                            spot.numReviews === 1 ? (
                             <h2 className="spot-reviews-number">• {spot.numReviews} review</h2>
                         ) : (
                             <h2 className="spot-reviews-number">• {spot.numReviews} reviews</h2>
                         ))}
                 </div>
+            </div>
+                <div className="reserve-bottom">
+                    <button type="submit" className='login-button' id='log-button'  onClick={reserveClick} >Reserve</button>
+                </div>
+            </div>
+          </div>
+          <div className="spot-reviews-header">
+                <div className="spot-reviews-header-left">
+                    {typeof spot.avgStarRating === "number" ? (
+                        <h2 className="header-left"><i className="fa-solid fa-star" id="star-detail"></i>   {rating(spot.avgStarRating).toFixed(1)}</h2>
+                    ) : (
+                        <h2 className="header-left"><i className="fa-solid fa-star" id="star-detail"></i>   New</h2>
+                    )}
+                    {spot.numReviews > 0 && (
+                    spot.numReviews === 1 ? (
+                        <h2 className="spot-reviews-number">• {spot.numReviews} review</h2>
+                    ) : (
+                        <h2 className="spot-reviews-number">• {spot.numReviews} reviews</h2>
+                    ))}
+                </div>
                 {
                     user && user.id !== spot.ownerId && noUserReview && (
-                        <div className="spot-reviews-header-right">
-                            <button className="post-review">
-                                <OpenModalMenuItem
-                                    itemText="Post Your Review"
-                                    modalComponent={<CreateReviewModal spot={spot} />}
-                                />
-                            </button>
-                        </div>
-                        )
-                }
-            </div>
-            <div className="spotDetail-reviews">
-                {reviews && (
-                <div>
-                    {spot.numReviews === 0 ? (
-                        <div>
-                            <p>Be the first to post a review!</p>
-                        </div>
-                    ) : (
-                        <div>
-                            {Object.values(reviews).map((review) => (
-                                review.User && (
-                                    <div key={review.id}>
-                                        <div>
-                                            <div>
-                                                <p className="review-user-name">{review.User.firstName}</p>
-                                                <p className="review-date">{convertDate(review.createdAt)}</p>
-                                            </div>
-                                            <p className="review-spots-text">{review.review}</p>
-                                            {user && user.id === review.userId && (
-                                                <div>
-                                                    <button className="delete-review">
-                                                    <OpenModalMenuItem
-                                                        itemText='Delete'
-                                                        modalComponent={<DeleteReviewForm review={review}  />}
-                                                    />
-                                                    </button>
-                                                </div>
-                                            )}
-                                          </div>
-                                        </div>
-                                    )
-                                 ))}
-                             </div>
-                        )}
+                    <div className="spot-reviews-header-right">
+                        <button className="post-review">
+                            <OpenModalMenuItem
+                                itemText="Post Your Review"
+                                modalComponent={<CreateReviewModal spot={spot} />}
+                            />
+                        </button>
                     </div>
-                 )}
-            </div>
+                    )
+                }
         </div>
-     )
+        <div className="spotDetail-reviews">
+            {reviews && (
+            <div>
+                {spot.numReviews === 0 ? (
+                    <div>
+                        <p>Be the first to post a review!</p>
+                    </div>
+                ) : (
+                    <div>
+                        {Object.values(reviews).map((review) => (
+                            review.User && (
+                                <div key={review.id}>
+                                    <div>
+                                        <div>
+                                            <p className="review-user-name">{review.User.firstName}</p>
+                                            <p className="review-date">{convertDate(review.createdAt)}</p>
+                                        </div>
+                                        <p className="review-spots-text">{review.review}</p>
+                                        {user && user.id === review.userId && (
+
+                                            <div>
+                                                <button className="delete-review">
+                                                <OpenModalMenuItem
+                                                    itemText="Delete"
+                                                    modalComponent={<DeleteReviewForm review={review} />}
+                                                />
+                                                </button>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            )
+                        ))}
+                    </div>
+                )}
+            </div>
+        )}
+    </div>
+        
+</div>
+
+    )
+
+
+
+
 }
+
