@@ -335,7 +335,7 @@ router.get('/:spotId/reviews', spotExists, async (req, res, next) => {
   }
 
   res.json({
-    Reviews: reviewsArr
+    reviews: reviewsArr
   });
 });
 

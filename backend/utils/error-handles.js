@@ -56,16 +56,12 @@ const usersReview = async (req, res, next) => {
   const review = await Review.findByPk(reviewId);
 
   if (review.userId !== user.id) {
-    //   const err = {};
-    //   err.title = "Authorization error";
-    //   err.status = 403;
-    //   err.message = "Review doesn't belong to current user";
-    //   return next(err);
-    return res.status(403).json({
-        message: 'Forbidden',
-        statusCode: 403
-    })
-  }
+    const err = {};
+    err.title = "Authorization error";
+    err.status = 403;
+    err.message = "Review doesn't belong to current user";
+    return next(err);
+}
   return next();
 };
 
@@ -75,16 +71,12 @@ const reviewExists = async (req, res, next) => {
   const review = await Review.findByPk(reviewId)
 
   if (!review) {
-    //   const err = {}
-    //   err.title = "Couldn't find a Review with the specified id";
-    //   err.message = "Review couldn't be found";
-    //   err.status = 404;
-    //   return next(err)
-    return res.status(404).json({
-        message: "Review couldn't be found",
-        statusCode: 404
-    })
-  };
+    const err = {}
+    err.title = "Couldn't find a Review with the specified id";
+    err.message = "Review couldn't be found";
+    err.status = 404;
+    return next(err)
+};
   return next();
 };
 
