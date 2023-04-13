@@ -1,0 +1,51 @@
+.delete-form-div {
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+
+.title {
+    font-family: Roboto, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.form {
+    width: 95%;
+}
+
+.delete-submit-button {
+    background-color: rgb(227, 28, 95);
+    width: 102%;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.keep-submit-button {
+    background-color: darkcyan;
+    width: 102%;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+
+.errors {
+    list-style-type: none;
+    font-size: 15px;
+    padding: 5px;
+    color: #ff5a5f;
+}
+
