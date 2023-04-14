@@ -16,6 +16,10 @@
     border: 2px solid #dddddd;
 }
 
+.user-icon:hover {
+    background-color: whitesmoke;
+}
+
 .user-bars-div {
     display: flex;
     padding: 5px;

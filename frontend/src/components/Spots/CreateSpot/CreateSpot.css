@@ -1,0 +1,155 @@
+.spotForm-div {
+    display: block;
+    text-align: center;
+}
+
+.spot-form {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    padding: 20px 40px 20px;
+}
+
+.form-text, .form-header {
+    padding-left: 340px;
+}
+
+.input-header, .input-description {
+    margin: 0;
+}
+
+.input-header {
+    padding: 15px 0px 5px;
+}
+
+.input-description {
+    padding: 0px 0px 10px;
+}
+
+.city-state-section {
+    display: grid;
+    grid-template-columns: 63% 2% 35%;
+}
+
+.comma {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 5px;
+    font-weight: bold;
+    padding-left: 5px;
+}
+
+.price-input {
+    display: flex;
+}
+
+.dollar-sign {
+    margin: 0;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.spot-button-div {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.spot-form input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.spot-form input, .description {
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 5px;
+}
+
+.city input {
+    width: 98%;
+}
+
+.description {
+    border: groove gray;
+    box-sizing: border-box;
+    width: 900px;
+    height: 150px;
+}
+
+.pricing-input input {
+    width: 100%;
+}
+
+.createSpot-button {
+    background-color: #e31c5f;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    width: 200px;
+    height: 50px;
+    margin-bottom: 15px;
+    border: none;
+    padding: 7px 10px 7px;
+    border-radius: 15px;
+}
+
+.createSpot-button:hover {
+    cursor: pointer;
+}
+
+.first-section {
+    border-bottom: dashed gray 3px;
+    padding-bottom: 10px;
+}
+
+.first-section input {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.first-section label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.third-section input {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.fifth-section input {
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.second-section, .third-section, .fourth-section, .fifth-section {
+    border-bottom: dashed gray 3px;
+    padding-bottom: 30px;
+}
+
+.error {
+    font-family: 'Montserrat', sans-serif;
+    color: red;
+    margin-left: 5px;
+    font-size: 14px;
+}
+
+.preImgErr {
+    display: flex;
+    flex-direction: column;
+}
+
+input::placeholder, textarea::placeholder {
+    font-family: 'Montserrat', sans-serif;
+}
