@@ -1,0 +1,198 @@
+.spot-div {
+    max-width: 100%;
+    padding: 0px 40px;
+    padding-top: 15px;
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    font-family: Roboto, Helvetica, sans-serif;
+}
+
+.spot-name {
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: -10px;
+    font-family: Roboto, Helvetica, sans-serif;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    justify-content: space-between;
+    font-family: Roboto, Helvetica, sans-serif;
+}
+
+.header-left {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-right: 6px;
+    width: fit-content;
+}
+
+.header-right {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    box-sizing: border-box;
+    height: auto;
+}
+
+.img-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 350px;
+}
+
+.main-picture {
+    height: 100%;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.side-picture {
+    height: 50%;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.owner-detail {
+    font-family: 'Roboto', 'Helvetica', 'sans-serif';
+    margin-bottom: -5px;
+}
+
+.spot-detail-section {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 3px solid rgba(165, 165, 165, 0.4);
+}
+
+.spot-description {
+    display: flex;
+    justify-content: left;
+    font-family: 'Roboto', 'Helvetica', 'sans-serif';
+    font-size: 20px;
+    max-width: 90%;
+}
+
+.reserve-card {
+    border: solid black;
+    border-radius: 10px;
+    padding: 10px 20px 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    min-width: 30%;
+    min-height: 130px;
+}
+
+.reserve-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.reserve-top-left {
+    display:  flex;
+    width: 35%;
+    justify-content: left;
+}
+
+.reserve-top-right {
+    display: flex;
+    width: 70%;
+    justify-content: right;
+}
+
+.Spot-price {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+#pic-1 {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+}
+
+#pic-2 {
+    padding-bottom: 2px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+#pic-3 {
+    padding-left: 3px;
+    padding-right: 3px;
+    padding-bottom: 3px;
+}
+
+#pic-4 {
+    padding-left: 3px;
+    padding-bottom: 3px;
+}
+
+.review-user-name {
+    padding-left: 3px;
+    padding-bottom: 0px;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.review-date {
+  font-size: 15px;
+  color: gray;
+  margin-top: -13px;
+  margin-left: 3px;
+}
+
+.review-spots-text {
+    font-family: 'Circular', 'BlinkMacSystemFont', 'Roboto', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    margin-top: -5px;
+}
+
+.spot-reviews-header-left {
+    display: flex;
+    width: fit-content;
+    justify-content: left;
+}
+
+.delete-review {
+    background-color: darkcyan;
+    width: 8%;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    color: #ffffff;
+    font-weight: bold;
+    list-style: none;
+    cursor: pointer;
+}
+
+.post-review {
+    background-color: darkcyan;
+    width: 12%;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    color: #ffffff;
+    font-weight: bolder;
+    list-style: none;
+    cursor: pointer;
+}
+
+#star-detail {
+    align-self: center;
+    font-size: 20px;
+    padding-bottom: 4px;
+    padding-right: 5px;
+    color: gold
+}
