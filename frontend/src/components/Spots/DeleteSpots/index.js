@@ -48,9 +48,7 @@ export default function DeleteSpotForm(spot) {
                     <li key={idx}>{error}</li>
                 ))}
             </ul>
-            <form
-                className="form"
-            >
+            <form className="form">
                 <button type="submit" className="delete-button" id="deleteSpot-button" onClick={submitDelete}>Yes Delete My Spot!</button>
                 <button type="submit" className="keep-submit-button" onClick={keepSpot}>No Keep My Spot!</button>
             </form>

@@ -1,0 +1,40 @@
+.delete-form {
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 750px;
+    height: 250px;
+}
+
+.error-messages {
+    list-style-type: none;
+    font-size: 12px;
+    padding: 5px;
+    color: #ff5a5f;
+}
+
+.form-header {
+    font-family: Roboto, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.form {
+    width: 90%;
+}
+
+.delete-button {
+    background-color: rgb(227, 28, 95);
+    width: 102%;
+    border: none;
+    border-radius: 10px;
+    height: 50px;
+    color: white;
+    font-weight: bold;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
