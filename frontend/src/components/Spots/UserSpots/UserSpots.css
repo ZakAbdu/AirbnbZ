@@ -37,7 +37,7 @@
 .spot-preImg {
     object-fit: cover;
     width: 100%;
-    height: fill;
+    height: stretch;
 }
 
 .spot-bottom-section {
