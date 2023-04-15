@@ -1,0 +1,187 @@
+.allSpots-container {
+    display: flex;
+    box-sizing: border-box;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 0px 40px;
+    padding-top: 15px;
+    font-family: Roboto, Helvetica, sans-serif;
+}
+
+.header-Manage-Spots {
+    font-size: 30px;
+    font-weight: bolder;
+    margin-left: 550px;
+}
+
+.spot {
+    height: fit-content;
+    box-sizing: border-box;
+    width: 25%;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.noSpots-title {
+    padding-left: 40px;
+}
+
+.spotImg {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.spot-preImg {
+    object-fit: cover;
+    width: 100%;
+    height: fill;
+}
+
+.spot-bottom-section {
+    width: 100%;
+    height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#star {
+    color: gold;
+}
+
+.spot-header {
+    display: flex;
+    justify-content: space-between;
+    height: 30%;
+}
+
+.spotLocal {
+    font-weight: bolder;
+}
+
+.footer-left-Section {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.Manage-create-spot {
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    list-style: none;
+    width: 12%;
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background-color: #e31c5f;
+    border: none;
+    font-weight: bolder;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-left: 48px;
+}
+
+.manage-spot-text {
+    color: white;
+    text-decoration: none;
+}
+
+.edit-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    height: 30px;
+    width: 40%;
+    background-color: #e31c5f;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: 140px;
+    border: none;
+    font-weight: bold;
+}
+
+.update {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.delete-option {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    text-align: center;
+    cursor: pointer;
+    list-style: none;
+    height: 30px;
+    width: 40%;
+    background-color: #e31c5f;
+    border-radius: 10px;
+    margin-top: -29px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin-left: -5px;
+    font-weight: bold;
+    border: none;
+}
+
+.price {
+    font-weight: bold;
+    padding-right: 5px;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    .spot {
+        width: 33%;
+    }
+
+    .Manage-create-spot {
+        width: 10%;
+    }
+
+    .spotImg {
+        height: 350px;
+    }
+}
+
+@media (min-width: 551px) and (max-width: 767px) {
+    .spot {
+        width: 50%;
+    }
+
+    .Manage-create-spot {
+        width: 25%;
+    }
+
+    .spotImg {
+        height: 350px;
+    }
+}
+
+@media (max-width: 550px) {
+    .spot {
+        width: 100%;
+    }
+
+    .Manage-create-spot {
+        width: 25%;
+    }
+
+    .spotImg {
+        height: 350px;
+    }
+}

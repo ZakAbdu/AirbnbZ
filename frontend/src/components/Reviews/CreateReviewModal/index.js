@@ -63,7 +63,7 @@ export default function CreateReviewModal(spot) {
   return (
     <div className='add-review-div'>
         <form className="review-form" onSubmit={onSubmit}>
-        <h1 className="form-text form-header">How was your stay?</h1>
+        <h1 className="review-header">How was your stay?</h1>
         <ul className="errors-list">
           {hasSubmitted && errors.map((error, idx) => (
               <li key={`error${idx}`} className="errors">{error}</li>
@@ -96,7 +96,7 @@ export default function CreateReviewModal(spot) {
         <p className="stars-text"><b>Stars</b></p>
       </div>
         <button
-        className={emptyField ? "submit-review-button-disabled" : 'form-button form-text submit-review-button'}
+        className={emptyField ? "submit-review-button-disabled" : 'submit-review-button'}
         disabled={Boolean(emptyField)}
         type="submit" >Submit Your Review</button>
         </form>
