@@ -49,6 +49,14 @@ function ProfileButton({ user }) {
     closeMenu();
   }
 
+  const demoSignIn = (e) => {
+    e.preventDefault();
+    const password = 'password'
+    const credential = 'demo@user.io'
+    dispatch(sessionActions.login({ credential, password }));
+    closeMenu();
+  }
+
   const ulClassName = "profile-dropdown" + (showMenu ? "" : " hidden");
 
   return (
@@ -84,6 +92,7 @@ function ProfileButton({ user }) {
                             modalComponent={<LoginFormModal />}
                         />
                     </div>
+                    <button onClick={demoSignIn} type='submit' className="demo-button" id="demouser-button">Demo User</button>
                 </div>
              </div>
              )}

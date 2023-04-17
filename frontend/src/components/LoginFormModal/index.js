@@ -30,6 +30,14 @@ function LoginFormModal() {
         const data = await res.json();
         if (data && data.errors) setErrors(data.errors);
       });
+  };
+
+  const demoSignIn = (e) => {
+    e.preventDefault();
+    const password = 'password'
+    const credential = 'demo@user.io'
+    dispatch(sessionActions.login({ credential, password }));
+    closeModal();
   }
 
   return (
@@ -71,6 +79,7 @@ function LoginFormModal() {
                 </button>
             </form>
         </div>
+        <span onClick={demoSignIn} type="submit" className='demoLog-button' id='demouser-log-button'>Demo User</span>
       </>
     );
 }

@@ -114,6 +114,17 @@
     border-bottom: 2px solid rgba(165, 165, 165, 0.2);
 }
 
+#demouser-button {
+    margin-top: 5px;
+    height: 25px;
+    width: 100%;
+    text-align: left;
+}
+
+#demouser-button:hover {
+    background-color: rgba(165, 165, 165, 0.2);
+}
+
 #logout-button {
     margin-top: 5px;
     height: 25px;

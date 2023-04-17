@@ -70,6 +70,18 @@ input {
     margin-bottom: 20px;
 }
 
+.demoLog-button {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+    margin-bottom: 10px;
+    color: blue;
+}
+
+.demoLog-button:hover {
+    cursor: pointer;
+}
+
 .errors-messages {
     list-style-type: none;
     font-size: 12px;
