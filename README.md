@@ -15,3 +15,7 @@ AIRBNBZ is a homesharing website allowing users to rent out their homes, apartme
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
 ![Sequelize](https://img.shields.io/badge/Sequelize-52B0E7?style=for-the-badge&logo=Sequelize&logoColor=white)
+
+## PREVIEW OF AIRBNBZ
+<img width="1406" alt="Screen Shot 2023-04-17 at 2 49 25 PM" src="https://user-images.githubusercontent.com/105683467/232618841-367715c1-ad16-456d-a85f-cf1a3a920e9d.png">
+
