@@ -25,13 +25,13 @@ module.exports = {
       {
         ownerId: 2,
         address: '2401 Commercial Ave',
-        city: 'Sandy Valley',
+        city: 'Las Vegas',
         state: 'Nevada',
         country: 'United States',
         lat: 36.16,
         lng: -86.78,
-        name: 'Desert retreat',
-        description: "Experience this once-in-lifetime vacation with this gorgeous cabin surrounded by nature.",
+        name: 'Sin City Retreat',
+        description: "Experience this once-in-lifetime vacation with this gorgeous loft surrounded by the bright lights of Vegas.",
         price: 155
       },
       {

@@ -42,20 +42,20 @@ module.exports = {
         stars: 0
       },
       {
-        userId: 2,
-        spotId: 4,
+        userId: 3,
+        spotId: 3,
         review: 'Amazing stay and views right in middle of Manhattan. Unforgettable experience and will definitely be booking with Zak again.',
         stars: 5
       },
       {
-        userId: 3,
-        spotId: 5,
-        review: 'Me and my large group had the time of our lives!! Extremely luxurious suite with unrivaled views and amazing location right in the middle of downtown Miami. Will 100% be booking again with Zak.',
+        userId: 2,
+        spotId: 6,
+        review: 'Me and my large group had the time of our lives!! Extremely luxurious suite with unrivaled views and amazing location right in the middle of downtown Miami. Will 100% be booking again.',
         stars: 5
       },
       {
         userId: 4,
-        spotId: 6,
+        spotId: 5,
         review: 'Fell in love with this city thanks to the amazing stay I had. Large home for entire family and minutes away from beaches and major attractions. Cannot wait to visit San Diego again and book this home again.',
         stars: 5
       }
