@@ -37,30 +37,21 @@ const err = {};
 const checkUserName = await User.findOne({ where: { username: username } });
 const checkEmail = await User.findOne({ where: { email: email } });
 
+
 if (checkEmail) {
-    // err.title = "Validation error";
-    // err.message = "User already exists";
-    // err.status = 403;
-    // err.errors = ["User with that email already exists"];
-    // return next(err);
-    return res.status(403).json({
-        message: "User already exists",
-        statusCode: 403,
-        errors: {email: 'User with that email already exists'}
-    })
+  err.title = "Validation error";
+  err.message = "User already exists";
+  err.status = 403;
+  err.errors = ["User with that email already exists"];
+  return next(err);
 }
 
 if (checkUserName) {
-    // err.title = "Validation error";
-    // err.message = "User already exists";
-    // err.status = 403;
-    // err.errors = ["User with that username already exists"];
-    // return next(err);
-    return res.status(403).json({
-        message: "User already exists",
-        statusCode: 403,
-        errors: {username: 'User with that username already exists'}
-    })
+  err.title = "Validation error";
+  err.message = "User already exists";
+  err.status = 403;
+  err.errors = ["User with that username already exists"];
+  return next(err);
 }
 
 // Validate input fields
@@ -90,7 +81,6 @@ return res.json({
   lastName: user.lastName,
   email: user.email,
   username: user.username,
-  token: ''
 });
 
 },
