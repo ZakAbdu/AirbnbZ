@@ -14,6 +14,7 @@ function Navigation({ isLoaded }){
     <div className='nav'>
         <div className='nav-inner'>
             <div className='left-nav'>
+                <a href='/'><img src='https://logosandtypes.com/wp-content/uploads/2020/06/airbnb.png' className='logo2' /></a>
                 <NavLink exact to='/' className='logo'>AIRBNBZ</NavLink>
             </div>
             {isLoaded && (

@@ -16,19 +16,16 @@ const spotExists = async (req, res, next) => {
   let spot = await Spot.findByPk(spotId);
 
   if (!spot) {
-    //   let err = {};
-    //   err.title = "Not found"
-    //   err.response = "Couldn't find a Spot with the specified id"
-    //   err.status = 404;
-    //   err.message = "Spot couldn't be found";
-    //   return next(err);
-    return res.status(404).json({
-        message: "Spot couldn't be found",
-        statusCode: 404
-    })
-  }
-  return next();
+    let err = {};
+    err.title = "Not found"
+    err.response = "Couldn't find a Spot with the specified id"
+    err.status = 404;
+    err.message = "Spot couldn't be found";
+    return next(err);
+}
+return next();
 };
+
 
 
 const usersSpot = async (req, res, next) => {
@@ -37,15 +34,11 @@ const usersSpot = async (req, res, next) => {
   const spot = await Spot.findByPk(spotId);
 
   if (user.id !== spot.ownerId) {
-    //   const err = {};
-    //   err.title = "Authorization error";
-    //   err.status = 403;
-    //   err.message = "Spot doesn't belong to current user";
-    //   return next(err);
-    return res.status(403).json({
-        message: 'Forbidden',
-        statusCode: 403
-    })
+      const err = {};
+      err.title = "Authorization error";
+      err.status = 403;
+      err.message = "Spot doesn't belong to current user";
+      return next(err);
   }
   return next();
 };
@@ -86,37 +79,14 @@ const bookingExists = async (req, res, next) => {
   let booking = await Booking.findByPk(bookingId);
 
   if (!booking) {
-    //   const err = {};
-    //   err.title = "Couldn't find a booking with the specific id"
-    //   err.status = 404;
-    //   err.message = "Booking couldn't be found";
-    //   return next(err)
-    return res.status(404).json({
-        message: "Booking couldn't be found",
-        statusCode: 404
-    })
+      const err = {};
+      err.title = "Couldn't find a booking with the specific id"
+      err.status = 404;
+      err.message = "Booking couldn't be found";
+      return next(err)
   }
   return next();
 };
-
-const usersBooking = async(req, res, next) => {
-  const { bookingId } = req.params;
-  const user = req.user
-  const booking = await Booking.findByPk(bookingId);
-
-  if (booking.userId !== user.id) {
-    //   const err = {};
-    //   err.title = "Authorization error";
-    //   err.status = 403;
-    //   err.message = "Review doesn't belong to current user";
-    //   return next(err);
-    return res.status(403).json({
-        message: 'Forbidden',
-        statusCode: 403
-    })
-  }
-  return next();
-}
 
 
 module.exports = {
