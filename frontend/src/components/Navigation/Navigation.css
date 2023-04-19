@@ -13,18 +13,21 @@
     color: #ff5a5f;
     font-size: 40px;
 }
+.logo2 {
+    width: 110px;
+}
 
 .left-nav {
     display: flex;
     align-items: center;
     box-sizing: border-box;
     flex-direction: row;
-    justify-content: center;
+    justify-content: left;
 }
 
 .nav-inner {
     display: flex;
-    padding: 15px 40px;
+    padding: 1px 4px;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
