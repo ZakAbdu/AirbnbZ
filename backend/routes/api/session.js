@@ -18,7 +18,6 @@ const validateLogin = [
 ];
 
 // // Log in
-
 router.post(
   '/',
   validateLogin,
@@ -80,6 +79,7 @@ router.get(
       } else return res.json({ user: null });
   }
  );
+ 
 // router.get(
 //   '/',
 //   restoreUser,

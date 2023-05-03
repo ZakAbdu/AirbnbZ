@@ -1,15 +1,13 @@
 // frontend/src/components/SignupFormModal/index.js
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { useModal } from "../../context/Modal";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css'
-import { Redirect } from "react-router-dom";
 
 function SignupFormModal() {
   const dispatch = useDispatch();
-  const sessionUser = useSelector((state) => state.session.user);
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [firstName, setFirstName] = useState("");
@@ -30,9 +28,6 @@ function SignupFormModal() {
         } else setEmptyField(false);
   }, [email, firstName, lastName, username, password, confirmPassword]) 
 
-  
-  if (sessionUser) return <Redirect to='/' />;
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (password === confirmPassword) {
@@ -47,24 +42,7 @@ function SignupFormModal() {
     return setErrors(['Confirm Password field must be the same as the Password field']);
   };
 
-  // const handleSubmit = async (e) => {
-  //   e.preventDefault();
-  //   if (password === confirmPassword) {
-  //     setErrors([]);
-  //     try {
-  //       await dispatch(sessionActions.signup({ email, username, firstName, lastName, password }));
-  //       await dispatch(sessionActions.login({ email, password }));
-  //       closeModal();
-  //     } catch (res) {
-  //       const data = await res.json();
-  //       if (data && data.errors) setErrors(data.errors);
-  //     }
-  //   } else {
-  //     setErrors(['Confirm Password field must be the same as the Password field']);
-  //   }
-  // };
   
-
   return (
     <>
     <div className="login-form">
