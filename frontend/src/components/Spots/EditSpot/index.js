@@ -2,7 +2,7 @@
 import { useEffect, useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router-dom";
-import { editSpots, getSingleSpot } from "../../../store/spots";
+import { editSpots, getSingleSpot, addPreviewImg } from "../../../store/spots";
 
 import "./EditSpot.css"
 
@@ -11,24 +11,23 @@ export default function EditSpotForm() {
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const { spotId } = useParams();
+    const { spotId } = useParams()
 
     useEffect(() => {
         dispatch(getSingleSpot(spotId));
     }, [dispatch, spotId]);
 
-    const spot = useSelector((state) => state.spots.singleSpot)
+    const spot = useSelector(state => state.spots.singleSpot)
 
 
-    const [address, setAddress] = useState(spot.address);
-    const [city, setCity] = useState(spot.city);
-    const [state, setState] = useState(spot.state);
-    const [country, setCountry] = useState(spot.country);
-
-    const [name, setName] = useState(spot.name);
-    const [description, setDescription] = useState(spot.description);
-    const [price, setPrice] = useState(spot.price);
-    const [preImgUrl, setPreImgURL] = useState(spot.SpotImages[0].url)
+    const [address, setAddress] = useState("");
+    const [city, setCity] = useState("");
+    const [state, setState] = useState("");
+    const [country, setCountry] = useState("");
+    const [name, setName] = useState("");
+    const [description, setDescription] = useState("");
+    const [price, setPrice] = useState("");
+    const [preImgUrl, setPreImgURL] = useState("")
     const [secondImgUrl, setSecondImgUrl] = useState("");
     const [thridImgUrl, setThridImgUrl] = useState("");
     const [fourthImgUrl, setFourthImgUrl] = useState("");
@@ -75,9 +74,36 @@ export default function EditSpotForm() {
             errors.previewUrl = "Preview image is required";
         }
 
+        if (!(preImgUrl.endsWith(".png") || preImgUrl.endsWith(".jpg") || preImgUrl.endsWith(".jpeg"))) {
+            errors.previewUrlEnd = "Image URL must end in .png, .jpg, or .jpeg";
+        }
+
+        if (secondImgUrl) {
+            if (!(secondImgUrl.endsWith(".png") || secondImgUrl.endsWith(".jpg") || secondImgUrl.endsWith(".jpeg"))) {
+              errors.secondImgUrl = "Image URL must end in .png, .jpg, or .jpeg";
+            }
+        }
+
+        if (thridImgUrl) {
+            if (!(thridImgUrl.endsWith(".png") || thridImgUrl.endsWith(".jpg") || thridImgUrl.endsWith(".jpeg"))) {
+              errors.thridImgUrl = "Image URL must end in .png, .jpg, or .jpeg";
+            }
+        }
+
+        if (fourthImgUrl) {
+            if (!(fourthImgUrl.endsWith(".png") || fourthImgUrl.endsWith(".jpg") || fourthImgUrl.endsWith(".jpeg"))) {
+              errors.fourthImgUrl = "Image URL must end in .png, .jpg, or .jpeg";
+            }
+        }
+
+        if (fifthImgUrl) {
+            if (!(fifthImgUrl.endsWith(".png") || fifthImgUrl.endsWith(".jpg") || fifthImgUrl.endsWith(".jpeg"))) {
+              errors.fifthImgUrl = "Image URL must end in .png, .jpg, or .jpeg";
+            }
+        }
+
         setErrors(errors);
     }, [address, city, state, country, name, description, price, preImgUrl, secondImgUrl, thridImgUrl, fourthImgUrl, fifthImgUrl]);
-
 
     const redirect = () => history.push(`/spots/${spot.id}`)
 
@@ -92,7 +118,7 @@ export default function EditSpotForm() {
         const lat = 13;
         const lng = 4;
 
-        const editedSpot = {
+        const newSpot = {
             address,
             city,
             state,
@@ -109,13 +135,25 @@ export default function EditSpotForm() {
 
         const url = preImgUrl;
 
-        const editSpot = await dispatch(editSpots(spot.id, editedSpot))
-        .catch(async (res) => {
-            const data = await res.json();
-            if (data && data.errors) setErrors(data.errors);
-        })
-        redirect();
-    }
+        const createdSpot = await dispatch(editSpots(spot.id, newSpot))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setErrors(data.errors);
+            })
+
+
+        const previewImg = await dispatch(addPreviewImg(createdSpot.id, url, true))
+            .catch(async (res) => {
+                const data = await res.json();
+                if (data && data.errors) setErrors(data.errors);
+            })
+        
+            redirect();
+        }
+
+
+    
+            
 
     return (
         <div className="spotForm-div">
